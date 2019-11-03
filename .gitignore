@@ -1,0 +1,31 @@
+venv
+.python-version
+.idea
+*__pycache__*
+*.pyc
+tmp
+*.sqlite3
+db/
+services/
+chat_srv/
+
+
+# Test&converage
+htmlcov/
+coverage.xml
+nosetests.xml
+.coverage
+.tox
+py_ms.egg-info/*
+pylintReport.txt
+.scannerwork/
+
+
+# Docker
+
+# Deploy
+build/
+dist/
+
+# other
+site/*

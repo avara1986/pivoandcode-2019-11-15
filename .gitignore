@@ -5,7 +5,6 @@ venv
 *.pyc
 tmp
 *.sqlite3
-db/
 services/
 chat_srv/
 

@@ -1,0 +1,17 @@
+pyms:
+  swagger:
+    path: "swagger"
+    file: "swagger.yaml"
+  tracer:
+    client: "jaeger"
+    host: "localhost"
+    component_name: "Chat DaaS"
+ms:
+  DEBUG: false
+  TESTING: false
+  APP_NAME: "Chat DaaS"
+  APPLICATION_ROOT : ""
+  SQLALCHEMY_TRACK_MODIFICATIONS: true
+  SECRET_KEY: "gjr39dkjn344_!67#"
+  DATABASE: db.sqlite3
+  SQLALCHEMY_DATABASE_URI: sqlite://

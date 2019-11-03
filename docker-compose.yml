@@ -1,0 +1,72 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    ports:
+      - 5437:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  chat-daas:
+    build:
+      context: ./chat_db
+      dockerfile: Dockerfile
+    volumes:
+      - './chat_db:/microservice'
+    ports:
+      - 8082:8082
+    depends_on:
+      - db
+
+  chat-baas:
+    build:
+      context: ./chat_baas
+      dockerfile: Dockerfile
+    volumes:
+      - './chat_svc:/microservice'
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+      - chat-daas
+
+  chat-svc:
+    build:
+      context: ./chat_svc
+      dockerfile: Dockerfile
+    volumes:
+      - './chat_svc:/microservice'
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+      - chat-baas
+
+  chat-front:
+    build:
+      context: ./chat_front
+      dockerfile: Dockerfile
+    volumes:
+      - './chat_front:/microservice'
+    ports:
+      - 8081:8081
+    depends_on:
+      - chat-daas
+      - chat-baas
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+    ports:
+      - "5775:5775/udp"
+      - "6831:6831/udp"
+      - "6832:6832/udp"
+      - "5778:5778"
+      - "16686:16686"
+      - "14268:14268"
+      - "9411:9411"

@@ -10,7 +10,7 @@ pyms:
     component_name: "Chat BaaS"
 ms:
   DEBUG: true
-  TESTING: true
+  TESTING: false
   APP_NAME: "Chat BaaS"
   APPLICATION_ROOT : ""
   SECRET_KEY: "gjr39dkjn344_!67#"

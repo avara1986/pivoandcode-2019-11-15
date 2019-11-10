@@ -7,7 +7,7 @@ pyms:
     host: "jaeger"
     component_name: "Chat DaaS"
 ms:
-  DEBUG: false
+  DEBUG: true
   TESTING: false
   APP_NAME: "Chat DaaS"
   APPLICATION_ROOT : ""

@@ -1,0 +1,2 @@
+CREATE DATABASE chat;
+CREATE DATABASE chat_test;

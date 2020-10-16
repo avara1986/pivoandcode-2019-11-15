@@ -1,10 +1,11 @@
 pyms:
-  requests:
-    data: ""
-ms:
-  DEBUG: true
-  TESTING: true
-  APP_NAME: project
-  APPLICATION_ROOT : /
-  SECRET_KEY: "gjr39dkjn344_!67#"
-  service_host: http://localhost:8080
+  services:
+    requests:
+      data: ""
+  config:
+    DEBUG: true
+    TESTING: true
+    APP_NAME: project
+    APPLICATION_ROOT : /
+    SECRET_KEY: "gjr39dkjn344_!67#"
+    service_host: http://localhost:8080

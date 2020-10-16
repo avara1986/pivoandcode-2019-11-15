@@ -8,7 +8,7 @@ __version__ = "0.1.0"
 
 from pyms.flask.app import Microservice
 
-ms = Microservice(service="ms", path=__file__)
+ms = Microservice(path=__file__)
 app = ms.create_app()
 
 
@@ -30,7 +30,3 @@ def dated_url_for(endpoint, **values):
                                      endpoint, filename)
             values['q'] = int(os.stat(file_path).st_mtime)
     return url_for(endpoint, **values)
-
-
-if __name__ == '__main__':
-    app.run()

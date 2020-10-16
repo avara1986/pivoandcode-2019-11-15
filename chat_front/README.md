@@ -13,4 +13,4 @@ source venv/bin/activate
 python manage.py
 ```
 
-Open http://127.0.0.1:8880/ui/
+Open http://127.0.0.1:8881/ui/

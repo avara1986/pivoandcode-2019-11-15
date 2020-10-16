@@ -14,4 +14,4 @@ ADD . $APP_HOME
 
 EXPOSE 8081
 
-CMD ["gunicorn", "--worker-class", "gevent", "--workers", "1", "--log-level", "INFO", "--bind", "0.0.0.0:8081", "manage:app"]
+ENTRYPOINT ["python", "manage.py"]
